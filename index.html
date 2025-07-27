@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aman Prajapati | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Hi, I'm Aman Prajapati</h1>
+    <p>BCA Student | Frontend Developer | CSS Enthusiast</p>
+    <a href="#projects" class="btn">View My Projects</a>
+  </header>
+
+  <!-- About Me -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a BCA student with a growing passion for technology and innovation. My academic background combined with hands-on project experience has helped me build a solid foundation in web development, programming, and problem-solving. I’m particularly interested in front-end development and enjoy creating intuitive, responsive user interfaces.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <h2>My Projects</h2>
+    <div class="project">
+      <h3>Weather App</h3>
+      <p>HTML, CSS, JavaScript</p>
+      <a href="#" class="btn">View Project</a>
+    </div>
+  </section>
+
+  <!-- Toggle Buttons -->
+  <section class="more-info-buttons">
+    <button class="btn" onclick="toggleSection('education')">Show Education</button>
+    <button class="btn" onclick="toggleSection('certificates')">Show Certificates</button>
+    <button class="btn" onclick="toggleSection('hobbies')">Show Hobbies</button>
+  </section>
+
+  <!-- Education -->
+  <section class="education toggle-section" id="education">
+    <h2>Education</h2>
+    <div class="edu-block">
+      <h3>Bachelor of Computer Applications (BCA)</h3>
+      <p>Dr. Virendra Swaroop Institute of Computer Studies<br />Kanpur, 2023 - Present</p>
+      <p><strong>Status:</strong> Pursuing</p>
+    </div>
+    <div class="edu-block">
+      <h3>Intermediate (12th Grade)</h3>
+      <p>Gulmohar Public School<br />Completed: 2023</p>
+    </div>
+    <div class="edu-block">
+      <h3>High School (10th Grade)</h3>
+      <p>Gulmohar Public School<br />Completed: 2021</p>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section class="certificates toggle-section" id="certificates">
+    <h2>Certificates</h2>
+    <ul>
+      <li>Completed workshop – cyber security & ethical hacking</li>
+      <li>Completed 40-days training program – Java</li>
+      <li>Introduction to AI studio – Google cloud</li>
+      <li>Participated in tech innovation quiz held on occasion on national technology day</li>
+    </ul>
+  </section>
+
+  <!-- Hobbies -->
+  <section class="hobbies toggle-section" id="hobbies">
+    <h2>Hobbies</h2>
+    <ul>
+      <li>Exploring new technologies and web trends</li>
+      <li>UI/UX design and experimenting with CSS animations</li>
+      <li>Competitive coding & solving logical puzzles</li>
+      <li>Watching tech-related YouTube channels and tutorials</li>
+      <li>Gaming & participating in e-sports events</li>
+      <li>Reading tech blogs and articles</li>
+      <li>Creating mini web apps & side projects</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:amanprajapati0206@gmail.com">amanprajapati0206@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/AmanPrajapati007" target="_blank" rel="noopener noreferrer">github.com/amanprajapati</a></p>
+    <p>
+      <a href="https://www.linkedin.com/in/aman-prajapati-573888307" target="_blank" rel="noopener noreferrer">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+          alt="LinkedIn"
+          width="20"
+          height="20"
+          style="vertical-align: middle; margin-right: 8px"
+        />
+        LinkedIn: Aman Prajapati
+      </a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Aman Prajapati. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Scroll reveal for sections
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    sections.forEach((section) => observer.observe(section));
+
+    // Toggle sections for Education, Certificates, Hobbies
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      if (section.style.display === "block") {
+        section.style.display = "none";
+      } else {
+        section.style.display = "block";
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    // Hide toggle sections on load
+    document.addEventListener("DOMContentLoaded", () => {
+      ["education", "certificates", "hobbies"].forEach((id) => {
+        document.getElementById(id).style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>

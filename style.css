@@ -1,0 +1,175 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  scroll-behavior: smooth;
+
+  /* Colorful animated gradient background */
+  background: linear-gradient(
+    270deg,
+    #ff6a00,
+    #ee0979,
+    #8e2de2,
+    #4a00e0,
+    #00c6ff,
+    #f7971e
+  );
+  background-size: 1200% 1200%;
+  animation: colorfulGradient 30s ease infinite;
+}
+
+@keyframes colorfulGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Headings */
+h2 {
+  color: #00adb5;
+  margin-bottom: 1rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 0.3em;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00adb5;
+  transform: scale(1.05);
+}
+
+/* Sections */
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  /* Initial state for scroll reveal */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills ul,
+.certificates ul,
+.hobbies ul {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.skills li,
+.certificates li,
+.hobbies li {
+  background: #222;
+  margin: 8px 0;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+/* Project & Education cards */
+.project,
+.edu-block {
+  background: #222;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  border-left: 5px solid #00adb5;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.project:hover,
+.edu-block:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 173, 181, 0.5);
+}
+
+/* Toggle sections hidden by default */
+.toggle-section {
+  display: none;
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.contact a {
+  color: #00adb5;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
